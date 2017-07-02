@@ -1,0 +1,6 @@
+config_version=3
+
+[application]
+
+name="Hasher"
+main_scene="res://levels/test_level.tscn"
