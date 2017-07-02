@@ -3,7 +3,7 @@ Hasher
 
 WIP Metroidvania/action game with cool robots
 
-Developed with [Godot Engine](https://godotengine.org) 2.1.x by *KOBUGE Games*.
+Developed with [Godot Engine](https://godotengine.org) 3.0+ by *KOBUGE Games*.
 
 ![Tileset preview](misc/mockup.png)
 
