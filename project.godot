@@ -4,6 +4,10 @@ config_version=3
 name="Hasher"
 main_scene="res://levels/test_level.tscn"
 
+[display]
+
+window/height=768
+
 [memory]
 
 multithread/thread_rid_pool_prealloc=60

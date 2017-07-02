@@ -1,5 +1,86 @@
-[gd_scene format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://tileset/floor_tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://props/terminal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://props/cablebox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://props/door.tscn" type="PackedScene" id=4]
 
 [node name="test_level" type="Node2D"]
 
+[node name="tile_map" type="TileMap" parent="."]
 
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+tile_data = PoolIntArray( 0, 0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 15, 536870916, 65537, 7, 65540, 1, 65542, 7, 65549, 536870916, 65550, 536870914, 65551, 536870917, 131082, 0, 131083, 0, 131084, 0, 131085, 536870917, 131086, 536870915, 196608, 0, 196609, 0, 196610, 0, 196611, 2, 196612, 4, 196618, 0, 196619, 7, 262145, 1, 262147, 3, 262148, 5, 262149, 0, 262150, 0, 262151, 0, 262157, 6, 327685, 7, 327686, 1, 327687, 0, 393216, 0, 393217, 0, 393218, 0, 393223, 0, 393226, 0, 393228, 2, 393229, 4, 458753, 7, 458754, 1, 458757, 6, 458762, 1, 458764, 3, 458765, 5, 458766, 2, 458767, 4, 524302, 3, 524303, 5, 589828, 536870916, 589829, 536870914, 589830, 0, 589831, 0, 589832, 0, 589837, 7, 655360, 0, 655361, 0, 655362, 0, 655364, 536870917, 655365, 536870915, 655367, 1, 655368, 7, 720897, 1, 720898, 7, 720907, 0, 720908, 0, 720909, 0, 720910, 0, 720911, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="terminals" type="Node2D" parent="."]
+
+[node name="terminal" parent="terminals" instance=ExtResource( 2 )]
+
+position = Vector2( 736, 608 )
+
+[node name="terminal2" parent="terminals" instance=ExtResource( 2 )]
+
+editor/display_folded = true
+position = Vector2( 800, 96 )
+
+[node name="terminal3" parent="terminals" instance=ExtResource( 2 )]
+
+editor/display_folded = true
+position = Vector2( 416, 160 )
+
+[node name="cableboxes" type="Node2D" parent="."]
+
+[node name="cablebox" parent="cableboxes" instance=ExtResource( 3 )]
+
+position = Vector2( 32, 608 )
+
+[node name="cablebox2" parent="cableboxes" instance=ExtResource( 3 )]
+
+editor/display_folded = true
+position = Vector2( 160, 160 )
+
+[node name="doors" type="Node2D" parent="."]
+
+[node name="door" parent="doors" instance=ExtResource( 4 )]
+
+position = Vector2( 480, 512 )
+
+[node name="door2" parent="doors" instance=ExtResource( 4 )]
+
+editor/display_folded = true
+position = Vector2( 32, 320 )
+
+[node name="decoration" parent="doors/door2"]
+
+frame = 1
+
+[node name="door3" parent="doors" instance=ExtResource( 4 )]
+
+editor/display_folded = true
+position = Vector2( 992, 640 )
+
+[node name="decoration" parent="doors/door3"]
+
+frame = 2
+
+[node name="door4" parent="doors" instance=ExtResource( 4 )]
+
+position = Vector2( 672, 320 )
+
+
+[editable path="doors/door2"]
+[editable path="doors/door3"]
