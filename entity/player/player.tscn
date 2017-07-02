@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://entity/entity.tscn" type="PackedScene" id=1]
+[ext_resource path="res://entity/player/player.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 32.0
+height = 64.0
+
+[node name="player" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+moving_friction = 0.1
+
+[node name="sprite" parent="."]
+
+region_rect = Rect2( 64, 0, 64, 128 )
+
+[node name="shape" parent="."]
+
+shape = SubResource( 1 )
+
+[node name="jump_ray" parent="."]
+
+cast_to = Vector2( 0, 70 )
+
+[node name="camera_2d" parent="."]
+
+current = true
+
+
