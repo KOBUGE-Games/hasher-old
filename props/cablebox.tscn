@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://tileset/floor_tiles.png" type="Texture" id=1]
-[ext_resource path="res://props/cablebox_deco.png" type="Texture" id=2]
+[ext_resource path="res://props/terminal.gd" type="Script" id=1]
+[ext_resource path="res://tileset/floor_tiles.png" type="Texture" id=2]
+[ext_resource path="res://props/cablebox_deco.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -17,7 +18,9 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
+script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+color = 0
 
 [node name="shape" type="CollisionShape2D" parent="."]
 
@@ -25,14 +28,14 @@ shape = SubResource( 1 )
 
 [node name="sprite" type="Sprite" parent="."]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 64, 64, 64 )
 _sections_unfolded = [ "Offset", "Region" ]
 
 [node name="decoration" type="Sprite" parent="."]
 
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 hframes = 3
 
 

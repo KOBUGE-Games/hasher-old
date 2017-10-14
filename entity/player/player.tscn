@@ -11,12 +11,20 @@ height = 64.0
 
 [node name="player" instance=ExtResource( 1 )]
 
+friction = 1.0
 script = ExtResource( 2 )
-moving_friction = 0.1
+jump_impulse = 350.0
+jump_secondary_impulse = 150.0
+jump_secondary_time = 0.1
+max_movement_speed = 300.0
+movement_acceleration = 700.0
+stop_smoothing = 1.0
 
 [node name="sprite" parent="."]
 
+z = 1
 region_rect = Rect2( 64, 0, 64, 128 )
+_sections_unfolded = [ "Region", "Z" ]
 
 [node name="shape" parent="."]
 
@@ -24,7 +32,9 @@ shape = SubResource( 1 )
 
 [node name="jump_ray" parent="."]
 
-cast_to = Vector2( 0, 70 )
+position = Vector2( 0, 50 )
+cast_to = Vector2( 0, 20 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="camera_2d" parent="."]
 

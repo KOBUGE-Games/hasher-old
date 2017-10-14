@@ -46,3 +46,7 @@ multithread/thread_rid_pool_prealloc=60
 [node]
 
 name_casing=2
+
+[physics]
+
+2d/default_gravity=627
